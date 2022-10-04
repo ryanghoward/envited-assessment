@@ -134,3 +134,58 @@ br {
   border-radius: 0.8rem;
   border: none;
 }
+
+/* Create Event Page */
+
+.createEventForm body {
+  background: linear-gradient(0deg, #a883ff, #9d73ff), #ae9aff;
+  font-family: Helvetica;
+}
+
+.createEventForm h1 {
+  font-style: normal;
+  font-weight: 700;
+  color: #240d57;
+  line-height: 4rem;
+  font-size: 3.125rem;
+  text-align: left;
+}
+
+form {
+  background: white;
+  padding: 3em;
+  height: 90vh;
+  border-radius: 20px;
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+  backdrop-filter: blur(10px);
+  box-shadow: 20px 20px 40px -6px rgba(104, 4, 129, 0.2);
+  text-align: left;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+label {
+  font-size: 17px;
+  color: #240d57;
+}
+
+input {
+  height: auto;
+  border: none;
+  border-bottom: 2px solid #8456ec;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  background-color: #ccb6ff;
+  border-radius: 10px;
+  color: white;
+}
