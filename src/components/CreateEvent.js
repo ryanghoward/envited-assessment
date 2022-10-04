@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../App.css";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import { Link } from "react-router-dom";
+import "../App.css";
 
-import { GiPartyPopper } from "react-icons/gi";
-import { BsFillPersonFill, BsCameraFill } from "react-icons/bs";
 import { GoCalendar } from "react-icons/go";
+import { BsFillPersonFill, BsCameraFill } from "react-icons/bs";
 import { FaFlagCheckered, FaMapPin } from "react-icons/fa";
+import { GiPartyPopper } from "react-icons/gi";
 
 const UploadImage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -53,7 +53,7 @@ const CreateEvent = () => {
   const sendItems = (newEvent) => {
     axiosWithAuth()
       .post(newEvent)
-      .then((res) => {
+      .then((resp) => {
         push("/events");
       })
       .catch((err) => {
@@ -61,7 +61,7 @@ const CreateEvent = () => {
       });
   };
 
-  const submit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const newEvent = {
       eventName: formValues.eventName,
@@ -85,62 +85,68 @@ const CreateEvent = () => {
 
   return (
     <div className='createEventForm'>
-      <form onSubmit={submit}>
-        {/* <h1>Start Planning!</h1> */}
-        Start Planning!
-        <GiPartyPopper />
-        Event Name
-        <br />
+      <h1>Start Planning!</h1>
+      <form onSubmit={handleSubmit}>
         <label>
+          <GiPartyPopper className='icon' />
+          Event Name
           <input
             value={formValues.eventName}
             name='eventName'
             type='text'
             onChange={change}
-            placeholder='Enter your name'
+            placeholder='What would you like to call this event?'
           />
         </label>
-        <BsFillPersonFill />
-        Host Name
         <label>
+          <BsFillPersonFill className='icon' />
+          Host Name
           <input
             value={formValues.hostName}
             name='hostName'
             type='text'
             onChange={change}
-            placeholder='Host Of Event'
+            placeholder='Who is hosting this event?'
           />
         </label>
-        <GoCalendar />
-        Start Time
-        <input
-          value={formValues.startTime}
-          name='startTime'
-          type='text'
-          onChange={change}
-          placeholder='Event Start Time'
-        />
-        <FaFlagCheckered />
-        End Time
-        <input
-          value={formValues.endTime}
-          name='endTime'
-          type='text'
-          onChange={change}
-          placeholder='Event End Time'
-        />
-        <FaMapPin />
-        Location
-        <input
-          value={formValues.eventLocation}
-          name='eventLocation'
-          type='text'
-          onChange={change}
-          placeholder='Event Location'
-        />
-        <BsCameraFill />
-        Photo
-        <UploadImage />
+        <label>
+          <GoCalendar className='icon' />
+          Start Time
+          <input
+            value={formValues.startTime}
+            name='startTime'
+            type='text'
+            onChange={change}
+            placeholder='What time will this event start?'
+          />
+        </label>
+        <label>
+          <FaFlagCheckered className='icon' />
+          End Time
+          <input
+            value={formValues.endTime}
+            name='endTime'
+            type='text'
+            onChange={change}
+            placeholder='What time will this event end?'
+          />
+        </label>
+        <label>
+          <FaMapPin className='icon' />
+          Location
+          <input
+            value={formValues.eventLocation}
+            name='eventLocation'
+            type='text'
+            onChange={change}
+            placeholder='Where will this event be held?'
+          />
+        </label>
+        <label>
+          <BsCameraFill className='icon' />
+          Upload A Photo
+          <UploadImage className='uploadImage' />
+        </label>
         <Link to='/event'>
           <input type='submit' value='Schedule Event' />
         </Link>

@@ -135,7 +135,7 @@ br {
   border: none;
 }
 
-/* Create Event Page */
+/*! Create Event Page */
 
 .createEventForm body {
   background: linear-gradient(0deg, #a883ff, #9d73ff), #ae9aff;
@@ -188,4 +188,13 @@ input:focus {
   background-color: #ccb6ff;
   border-radius: 10px;
   color: white;
+}
+
+.icon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.uploadImage {
+  border: 1px solid red;
 }
