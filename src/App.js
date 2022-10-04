@@ -1,17 +1,16 @@
-import "./App.css";
+import { Routes, Route, Router } from "react-router-dom";
+// import "./App.css";
+
+import Home from "./components/Home";
 
 function App() {
   return (
-    <>
-      <div className='header'>
-        <h1>
-          Imagine if <span className='sc'>Snapchat</span> had events.
-        </h1>
-        <p>
-          Easily host and share events with your friends across any social media
-        </p>
-      </div>
-    </>
+    <div className='App'>
+      {/* <Router> */}
+      <Home />
+      {/* <Route exact path='/' element={<Home />} /> */}
+      {/* </Router> */}
+    </div>
   );
 }
 
