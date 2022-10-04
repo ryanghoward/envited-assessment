@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../App.css";
 
 const Home = () => {
@@ -15,9 +15,9 @@ const Home = () => {
             Easily host and share events with your friends <br />
             across any social media.
           </p>
-          {/* <Link to='/create'> */}
-          <button className='button'>🎉 Create My Event</button>
-          {/* </Link> */}
+          <Link to='/create'>
+            <button className='button'>🎉 Create My Event</button>
+          </Link>
         </div>
       </div>
     </div>
