@@ -86,7 +86,8 @@ const CreateEvent = () => {
   return (
     <div className='createEventForm'>
       <form onSubmit={submit}>
-        <h1>Start Planning!</h1>
+        {/* <h1>Start Planning!</h1> */}
+        Start Planning!
         <GiPartyPopper />
         Event Name
         <br />
@@ -143,6 +144,12 @@ const CreateEvent = () => {
         <Link to='/event'>
           <input type='submit' value='Schedule Event' />
         </Link>
+        {error ? (
+          <>
+            <p style={{ color: "red" }}>{error}</p>
+            <button onClick={handleClick}>View Events anyway</button>
+          </>
+        ) : null}
       </form>
     </div>
   );
